@@ -1,0 +1,12 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Flecha en ángulo con gradiente -->
+  <path d="M100 180 L150 130 L200 180 L180 200 L150 170 L120 200 Z" fill="url(#grad1)" />
+
+  <!-- Gradiente azul-violeta -->
+  <defs>
+    <linearGradient id="grad1" x1="100" y1="130" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0055FF" />
+      <stop offset="100%" stop-color="#AA3FFF" />
+    </linearGradient>
+  </defs>
+</svg>
