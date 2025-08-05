@@ -4,6 +4,9 @@
     --text-color: #1A1A1A;
     --light-text: #4A4A4A;
     --white: #FFFFFF;
+    --gradient-start: #00F0FF;
+    --gradient-end: #9747FF;
+    --btn-shadow: rgba(0, 240, 255, 0.3);
 }
 
 * {
@@ -94,10 +97,23 @@ nav {
     gap: 0.5rem;
 }
 
+@keyframes gradientAnimation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(180deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
 .logo-icon {
     height: 90px;
     width: auto;
     margin-top: -5px;
+    animation: gradientAnimation 8s infinite linear;
 }
 
 .logo-text {
@@ -124,13 +140,43 @@ nav {
     color: var(--secondary-color);
 }
 
+@keyframes buttonGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .signup-btn {
-    background-color: var(--secondary-color);
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    background-size: 200% 100%;
     color: var(--white);
-    transition: background-color 0.3s ease;
-    padding: 0.5rem 1.25rem;
-    border-radius: 4px;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
     margin-left: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--btn-shadow);
+    animation: buttonGradient 3s ease infinite;
+}
+
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--btn-shadow);
+}
+
+.signup-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px var(--btn-shadow);
 }
 
 /* Hero Section */
@@ -380,7 +426,7 @@ footer {
     }
 
     .logo-icon {
-        height: 65px;
+        height: 80px;
         margin: 0;
     }
 
